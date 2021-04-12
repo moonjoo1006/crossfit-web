@@ -12,17 +12,15 @@ app.prepare().then(() => {
     const server = new Koa();
     const router = new Router();
 
-    console.log("dev " + dev);
-
     router.get("/(.*)", async (ctx) => {
         await handle(ctx.req, ctx.res);
         ctx.respond = false;
     });
 
-    // router.all("/(.*)", async (ctx) => {
+    //router.all("/(.*)", async (ctx) => {
         //const {request} = ctx;
         //const {url, header, query} = request;
-    // });
+    //});
 
     server.use(router.routes());
 

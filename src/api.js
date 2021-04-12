@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const client = axios.create({
-    baseURL: `${process.env.API_URL}`,
+    baseURL: `/api`,
     timeout: 30000,
     withCredentials: false
 })
